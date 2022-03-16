@@ -1,0 +1,4 @@
+cloudinary:
+  cloud_name: anuvu-prod
+  api_key: 11
+  api_secret: 11
