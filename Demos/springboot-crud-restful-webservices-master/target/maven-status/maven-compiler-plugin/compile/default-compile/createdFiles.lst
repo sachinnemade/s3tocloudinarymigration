@@ -1,0 +1,13 @@
+net/javaguides/springboot/SpringbootCrudRestfulWebservicesApplication.class
+net/javaguides/springboot/exception/ResourceNotFoundException.class
+net/javaguides/springboot/Config.class
+net/javaguides/springboot/repository/UserRepository.class
+net/javaguides/springboot/MigrationlogService.class
+net/javaguides/springboot/iMigrationlogService.class
+net/javaguides/springboot/controller/UserController.class
+net/javaguides/springboot/exception/ErrorDetails.class
+net/javaguides/springboot/MigrationlogdbEntity.class
+net/javaguides/springboot/controller/bucketResource.class
+net/javaguides/springboot/entity/User.class
+net/javaguides/springboot/MigrationlogJPARepo.class
+net/javaguides/springboot/exception/GlobalExceptionHandler.class

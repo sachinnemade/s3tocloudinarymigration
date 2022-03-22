@@ -5,16 +5,18 @@ spring:
       - org.springframework.cloud.aws.autoconfigure.context.ContextStackAutoConfiguration
       - org.springframework.cloud.aws.autoconfigure.context.ContextRegionProviderAutoConfiguration
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver #com.mysql.jdbc.Driver
     username: root
+#    url: jdbc:mysql://migrationdbinstannce.cnk60yeyhs4l.us-east-2.rds.amazonaws.com:3306/cldMigration
+#    password: sachinnemade
     url: jdbc:mysql://localhost:3306/cldMigration
     password: Admin@1234
   jpa:
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL57Dialect
+        dialect: org.hibernate.dialect.MySQL8Dialect #org.hibernate.dialect.MySQL57Dialect
   profiles:
-    active: "default"
+    active: default
 S3bucket:
   bucket-name: imageassets12
   bucket-url: https://imageassets12.s3.amazonaws.com/
@@ -30,5 +32,5 @@ server:
   port: 9091
 cloudinary:
   cloud_name: anuvu-dev
-  api_key: 659539734383637
-  api_secret: jQrkZzSXbIl4QGKIvbJLNsOlyOI
+  api_key: 336625465193458
+  api_secret: WuvXWKKtWJrcfNulItmGqvViSGU

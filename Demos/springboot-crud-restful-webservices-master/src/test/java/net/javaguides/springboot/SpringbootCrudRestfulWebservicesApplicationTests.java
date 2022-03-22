@@ -1,13 +1,13 @@
-package com.s3cloudinarygroup.s3tocloudinary;
+package net.javaguides.springboot;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class S3tocloudinaryApplicationTests {
+class SpringbootCrudRestfulWebservicesApplicationTests {
 
 //	@Test
-//	void contextLoads() {
-//	}
+	void contextLoads() {
+	}
 
 }

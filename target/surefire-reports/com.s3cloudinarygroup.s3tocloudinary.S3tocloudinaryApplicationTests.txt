@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.s3cloudinarygroup.s3tocloudinary.S3tocloudinaryApplicationTests
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.278 s - in com.s3cloudinarygroup.s3tocloudinary.S3tocloudinaryApplicationTests
