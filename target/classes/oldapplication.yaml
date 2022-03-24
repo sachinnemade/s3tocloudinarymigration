@@ -5,16 +5,17 @@ spring:
       - org.springframework.cloud.aws.autoconfigure.context.ContextStackAutoConfiguration
       - org.springframework.cloud.aws.autoconfigure.context.ContextRegionProviderAutoConfiguration
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver #com.mysql.jdbc.Driver
-    username: root
-#    url: jdbc:mysql://migrationdbinstannce.cnk60yeyhs4l.us-east-2.rds.amazonaws.com:3306/cldMigration
-#    password: sachinnemade
-    url: jdbc:mysql://localhost:3306/cldMigration
-    password: Admin@1234
+#    driver-class-name: com.mysql.cj.jdbc.Driver #com.mysql.jdbc.Driver
+#    username: root
+    username: admin
+    url: jdbc:mysql://migrationdbinstance.cnk60yeyhs4l.us-east-2.rds.amazonaws.com:3306/cldMigration
+    password: Test1234
+#    url: jdbc:mysql://localhost:3306/cldMigration
+#    password: Admin@1234
   jpa:
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect #org.hibernate.dialect.MySQL57Dialect
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect #org.hibernate.dialect.MySQL8Dialect #org.hibernate.dialect.MySQL57Dialect
   profiles:
     active: default
 S3bucket:

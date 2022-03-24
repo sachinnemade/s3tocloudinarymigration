@@ -8,8 +8,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EnableJpaRepositories
-@ComponentScan(basePackageClasses = {bucketResource.class,MigrationlogJPARepo.class})
+//@EnableJpaRepositories
+//@ComponentScan(basePackageClasses = {bucketResource.class,MigrationlogJPARepo.class})
 public class S3tocloudinaryApplication {
 
 	public static void main(String[] args) {

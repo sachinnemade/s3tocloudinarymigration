@@ -1,0 +1,10 @@
+cloudinary:
+  cloud_name: anuvu-prod
+  api_key: 11
+  api_secret: 11
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    url: jdbc:mysql://cldmigrationinstance.c0m8eiunejvl.us-east-1.rds.amazonaws.com:3306/cldMigration
+    password: sachinnemade

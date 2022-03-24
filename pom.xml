@@ -47,10 +47,10 @@
 		</dependency>
 
 		<!-- Starter for using JDBC with the HikariCP connection pool-->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jdbc</artifactId>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-jdbc</artifactId>-->
+<!--		</dependency>-->
 
 		<!-- To connect to a MySQL database server from a Java app, you need a JDBC driver.-->
 		<dependency>
