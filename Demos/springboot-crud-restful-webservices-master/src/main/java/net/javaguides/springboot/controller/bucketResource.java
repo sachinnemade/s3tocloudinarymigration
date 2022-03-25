@@ -53,7 +53,7 @@ public class bucketResource {
 
     @GetMapping("/cloudinarydtls")
     public ResponseEntity< String> cldDtsl() throws IOException {
-        String retString = "cloud_name:" + cloud_name + ". api_key:"+ api_key + ". api_secret:"+api_secret;
+        String retString = " cloud_name:" + cloud_name + ". api_key:"+ api_key + ". api_secret:"+api_secret;
         return new ResponseEntity<String>(retString, HttpStatus.OK);
     }
 

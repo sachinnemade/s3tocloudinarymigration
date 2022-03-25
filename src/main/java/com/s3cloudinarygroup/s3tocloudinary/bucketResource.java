@@ -40,6 +40,8 @@ public class bucketResource {
     private String api_key;
     @Value("${cloudinary.api_secret}")
     private String api_secret;
+    @Value("${cloudinarydestinationfolder}")
+    private String cloudinarydestinationfolder;
 
     @Autowired
     private AmazonS3 amazonS3;
@@ -52,7 +54,7 @@ public class bucketResource {
 
     @GetMapping("/cloudinarydtls")
     public ResponseEntity< String> cldDtsl() throws IOException {
-        String retString = "cloud_name:" + cloud_name + ". api_key:"+ api_key + ". api_secret:"+api_secret;
+        String retString = "DestinationFolder:" + cloudinarydestinationfolder +  " cloud_name:" + cloud_name + ". api_key:"+ api_key + ". api_secret:"+api_secret;
         return new ResponseEntity<String>(retString,HttpStatus.OK);
     }
 
@@ -146,7 +148,7 @@ public class bucketResource {
                     } else {
                         try{
                             cloudinary.uploader().upload("s3://" + bucketName + "/" + fileKey,
-                                    ObjectUtils.asMap("public_id", "FromS3/" + fileKey, "resource_type", "auto"));
+                                    ObjectUtils.asMap("public_id", cloudinarydestinationfolder + "/" + fileKey, "resource_type", "auto"));
 
                             migrationlogService.savelog("Info",fileKey + " copied.",job);
 

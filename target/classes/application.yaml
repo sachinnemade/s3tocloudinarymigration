@@ -1,0 +1,50 @@
+cloudinary:
+  cloud_name: anuvu-dev
+  api_key: '336625465193458'
+  api_secret: WuvXWKKtWJrcfNulItmGqvViSGU
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+  application:
+    name: App Name
+  profiles:
+    active: default
+  datasource:
+    password: Test1234
+    username: admin
+    url: jdbc:mysql://migrationdbinstance.cnk60yeyhs4l.us-east-2.rds.amazonaws.com:3306/cldMigration
+  driver-class-name: com.mysql.cj.jdbc.Driver
+  autoconfigure:
+    exclude: org.springframework.cloud.aws.autoconfigure.messaging.MessagingAutoConfiguration,
+      org.springframework.cloud.aws.autoconfigure.context.ContextStackAutoConfiguration,
+      org.springframework.cloud.aws.autoconfigure.context.ContextRegionProviderAutoConfiguration
+awscloud:
+  aws:
+    region:
+      static: us-east-1
+      auto: 'false'
+    credentials:
+      access-key: AKIAVF5MBF6AGCKSVBUQ
+      secret-key: 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
+S3bucket:
+  bucket-url: https://imageassets12.s3.amazonaws.com/
+  bucket-name: imageassets12
+cloudinarydestinationfolder: ${DEST_FOLDER:migration}
+server:
+  port: '8031'
+cloud:
+  aws:
+    stack:
+      auto: 'false'
+
+---
+spring:
+  profiles: test
+cloudinary:
+  cloud_name: anuvu-test
+  api_key: 659539734383637
+  api_secret: jQrkZzSXbIl4QGKIvbJLNsOlyOI

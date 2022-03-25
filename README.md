@@ -2,9 +2,12 @@
 #package 
 $mvn package
 
-#Run test profile
-java -jar -Dspring.profiles.active=test target/s3tocloudinary-0.0.1-SNAPSHOT.jar
+#declare envionment variable with default value - migration
+cloudinarydestinationfolder: ${DEST_FOLDER:migration}
 
+#Run test profile
+
+java -jar -DDEST_FOLDER=test_migration  target/s3tocloudinary-0.0.1-SNAPSHOT.jar --spring.profiles.active=test 
 
 #apis
 
