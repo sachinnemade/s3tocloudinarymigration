@@ -35,7 +35,7 @@ S3bucket:
   bucket-name: imageassets12
 cloudinarydestinationfolder: ${DEST_FOLDER:migration}
 server:
-  port: '8031'
+  port: '8031' # Default port for nginx, keep 5000 while deployment to EB to avoid bad gateway https://dzone.com/articles/run-your-spring-boot-application-on-aws-using-elas
 cloud:
   aws:
     stack:
