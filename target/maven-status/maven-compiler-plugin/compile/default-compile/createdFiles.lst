@@ -1,7 +1,7 @@
-com/s3cloudinarygroup/s3tocloudinary/MigrationlogJPARepo.class
-com/s3cloudinarygroup/s3tocloudinary/iMigrationlogService.class
-com/s3cloudinarygroup/s3tocloudinary/Config.class
-com/s3cloudinarygroup/s3tocloudinary/MigrationlogdbEntity.class
-com/s3cloudinarygroup/s3tocloudinary/bucketResource.class
-com/s3cloudinarygroup/s3tocloudinary/S3tocloudinaryApplication.class
-com/s3cloudinarygroup/s3tocloudinary/MigrationlogService.class
+com\s3cloudinarygroup\s3tocloudinary\bucketResource.class
+com\s3cloudinarygroup\s3tocloudinary\Config.class
+com\s3cloudinarygroup\s3tocloudinary\MigrationlogJPARepo.class
+com\s3cloudinarygroup\s3tocloudinary\S3tocloudinaryApplication.class
+com\s3cloudinarygroup\s3tocloudinary\MigrationlogdbEntity.class
+com\s3cloudinarygroup\s3tocloudinary\iMigrationlogService.class
+com\s3cloudinarygroup\s3tocloudinary\MigrationlogService.class

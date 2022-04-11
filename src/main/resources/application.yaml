@@ -14,9 +14,9 @@ spring:
   profiles:
     active: default
   datasource:
-    password: Test1234
-    username: admin
-    url: jdbc:mysql://migrationdbinstance.cnk60yeyhs4l.us-east-2.rds.amazonaws.com:3306/cldMigration
+    password: Test1234 #Admin@1234
+    username: admin #root
+    url: jdbc:mysql://migrationdbinstance.cnk60yeyhs4l.us-east-2.rds.amazonaws.com:3306/cldMigration #jdbc:mysql://localhost:3306/usersDB?useSSL=false
   driver-class-name: com.mysql.cj.jdbc.Driver
   autoconfigure:
     exclude: org.springframework.cloud.aws.autoconfigure.messaging.MessagingAutoConfiguration,
@@ -33,6 +33,10 @@ awscloud:
 S3bucket:
   bucket-url: https://imageassets12.s3.amazonaws.com/
   bucket-name: imageassets12
+S3bucketFrom:
+  bucket-name: asperasourcebucket
+S3bucketTo:
+  bucket-name: asperadestbucket
 cloudinarydestinationfolder: ${DEST_FOLDER:migration}
 server:
   port: '8031' # Default port for nginx, keep 5000 while deployment to EB to avoid bad gateway https://dzone.com/articles/run-your-spring-boot-application-on-aws-using-elas
@@ -48,3 +52,22 @@ cloudinary:
   cloud_name: anuvu-test
   api_key: 659539734383637
   api_secret: jQrkZzSXbIl4QGKIvbJLNsOlyOI
+awscloud:
+  aws:
+    region:
+      static: us-east-2 # us-east-1
+      auto: 'false'
+    credentials:
+      access-key: AKIAV3KU4A4WA6IE7MQQ # AKIAVF5MBF6AGCKSVBUQ
+      secret-key: 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 # jl73Ygsa4MD6MMaxinISn6S9EJp4u0f++FEpwBn2
+S3bucketFrom:
+  bucket-name: com-globaleagle-contentit-dcsc-prod-library
+  prefix: ${SOURCE_BUCKET_PREFIX:inbound/IMAGES/AIRLINES/Breeze/_2021 cycles/}
+S3bucketTo:
+  bucket-name: com.anuvu.cloudinary.migration
+  dest-key-replace-blank: ${DEST_KEY_REPLACE_BLANK:inbound/IMAGES/}
+S3bucketForCLD:
+  bucket-name: com.anuvu.cloudinary.migration #imageassets12
+  prefix: ${SOURCE_BUCKET_CLD_PREFIX:AIRLINES/Breeze/_2021 cycles/}
+  key-part-replace-blank: ${KEY_PART_REPLACE_BLANK:}
+
