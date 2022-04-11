@@ -252,6 +252,12 @@ public class bucketResource {
                     List<String> fileList = result.getObjectSummaries().stream()
                             .map(S3ObjectSummary::getKey)
                             .collect(Collectors.toList());
+                    for (S3ObjectSummary objectSummary : result.getObjectSummaries()) {
+
+                        migrationlogService.savelog("Info","File Modified date " + objectSummary.getKey() + "-" + new SimpleDateFormat("dd/MM/yyy hhmmss").format(objectSummary.getLastModified()),job);
+                    }
+//                      https://stackoverflow.com/questions/36153110/aws-s3-get-last-modified-timestamp-java
+
                     for (String fileitem : fileList) {
                         newfileList.add(fileitem);
                     }
