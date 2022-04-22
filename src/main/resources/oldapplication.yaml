@@ -4,10 +4,9 @@ cloudinary:
   api_secret: WuvXWKKtWJrcfNulItmGqvViSGU
 spring:
   jpa:
-    database-platform: com.s3cloudinarygroup.s3tocloudinary.SQLDialect
-#    properties:
-#      hibernate:
-#        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:
       ddl-auto: update
   application:
@@ -15,14 +14,11 @@ spring:
   profiles:
     active: default
   datasource:
-    url: jdbc:sqlite:asptocld.db
-    driver-class-name: org.sqlite.JDBC
-    username: admin
-    password: admin
+    url:asptocld.db
 #    password: Test1234 #Admin@1234
 #    username: admin #root
 #    url: jdbc:mysql://migrationdbinstance.cnk60yeyhs4l.us-east-2.rds.amazonaws.com:3306/cldMigration #jdbc:mysql://localhost:3306/usersDB?useSSL=false
-#    driver-class-name: com.mysql.cj.jdbc.Driver
+#  driver-class-name: com.mysql.cj.jdbc.Driver
   autoconfigure:
     exclude: org.springframework.cloud.aws.autoconfigure.messaging.MessagingAutoConfiguration,
       org.springframework.cloud.aws.autoconfigure.context.ContextStackAutoConfiguration,
@@ -30,21 +26,18 @@ spring:
 awscloud:
   aws:
     region:
-      static: us-east-2
+      static: us-east-1
       auto: 'false'
     credentials:
-      access-key: AKIAV3KU4A4WDVNFKFED
-      secret-key: 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
+      access-key: AKIAVF5MBF6AGCKSVBUQ
+      secret-key: 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
 S3bucket:
-  bucket-url:
+  bucket-url: https://imageassets12.s3.amazonaws.com/
   bucket-name: imageassets12
 S3bucketFrom:
-  bucket-name: com-globaleagle-contentit-dcsc-prod-library
-  prefix: ${SOURCE_BUCKET_PREFIX:inbound/IMAGES/AIRLINES/AIR BELGIUM/0622/Movies/}
-#  prefix: ${SOURCE_BUCKET_PREFIX:inbound/IMAGES/AIRLINES/Breeze/_2021 cycles/}
+  bucket-name: asperasourcebucket
 S3bucketTo:
-  bucket-name: com.anuvu.cloudinary.migration
-  dest-key-replace-blank: ${DEST_KEY_REPLACE_BLANK:inbound/IMAGES/}
+  bucket-name: asperadestbucket
 cloudinarydestinationfolder: ${DEST_FOLDER:migration}
 server:
   port: '8031' # Default port for nginx, keep 5000 while deployment to EB to avoid bad gateway https://dzone.com/articles/run-your-spring-boot-application-on-aws-using-elas
@@ -52,11 +45,6 @@ cloud:
   aws:
     stack:
       auto: 'false'
-S3bucketForCLD:
-  bucket-name: com.anuvu.cloudinary.migration #imageassets12
-  prefix: ${SOURCE_BUCKET_CLD_PREFIX:AIRLINES/Breeze/_2021 cycles/}
-  key-part-replace-blank: ${KEY_PART_REPLACE_BLANK:}
-
 
 ---
 spring:

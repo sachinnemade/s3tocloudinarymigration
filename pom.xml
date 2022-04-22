@@ -48,6 +48,12 @@
 			<optional>true</optional>
 		</dependency>
 
+		<dependency>
+			<groupId>org.xerial</groupId>
+			<artifactId>sqlite-jdbc</artifactId>
+			<version>3.28.0</version>
+		</dependency>
+
 		<!-- Starter for using JDBC with the HikariCP connection pool-->
 <!--		<dependency>-->
 <!--			<groupId>org.springframework.boot</groupId>-->
